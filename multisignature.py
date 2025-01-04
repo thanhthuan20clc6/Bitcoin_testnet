@@ -40,7 +40,7 @@ redeem_script2 = CScript([OP_2, public_key3, public_key4, OP_2, OP_CHECKMULTISIG
 # Create a P2SH address from the redeem script
 addr_change = P2SHBitcoinAddress.from_redeemScript(redeem_script2)
 
-# Print out
+# Print output
 print("Multisig Address Source:", addr_source)
 print("Multisig Address Change:", addr_change)
 

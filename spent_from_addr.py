@@ -15,26 +15,26 @@ from bitcoin.wallet import CBitcoinSecret, CBitcoinAddress, P2PKHBitcoinAddress
 SelectParams("testnet")
 
 # source address
-WIF_source = "cTykYWBtXDBTpE16g5t7WgfmiTG53zWethsWux6sDyGmZVEgg9kb" #the private key that you were generated;
+WIF_source = "cQuQE369Shpsekke7eLCrc4UAmhVHs7QmmqTUQhmRrBd7LViAoHn" #the private key that you were generated;
 privateKey_source = CBitcoinSecret(WIF_source)
 publicKey_source = privateKey_source.pub
 address_source = P2PKHBitcoinAddress.from_pubkey(publicKey_source)
 
 ## change address
 WIF_source = "cUGzSMWw24p4G6ei98KCfRw5A31BYa6L2f1bSPukhF7gLtbJdZLP" #the private key that you were generated;
-privateKey_source = CBitcoinSecret(WIF_source)
-publicKey_source = privateKey_source.pub
-address_change = P2PKHBitcoinAddress.from_pubkey(publicKey_source)
+privateKey_change = CBitcoinSecret(WIF_source)
+publicKey_change = privateKey_change.pub
+address_change = P2PKHBitcoinAddress.from_pubkey(publicKey_change)
 
 print("The Source Address:", address_source)
 print("The Change Address:", address_change)
 
 
 # UTXO info 
-txid_str = "6d2f4d11fb3a14c931c3261278ed10c4d8ea707701c2edf90794604a3d62478d" #your txid on web testnet
+txid_str = "50f61e081622ad573076a3ce30f6f3f35b209dcc92337c6230e38f5ce9ab3e6b" #your txid on web testnet
 txid = lx(txid_str)
-vout = 1
-input_amount = 0.0002765
+vout = 0
+input_amount = 0.00028168
 
 # create TxIn
 txin = CMutableTxIn(COutPoint(txid, vout))
@@ -43,10 +43,10 @@ txin = CMutableTxIn(COutPoint(txid, vout))
 txin_scriptPubKey = CScript([OP_DUP, OP_HASH160, Hash160(publicKey_source), OP_EQUALVERIFY, OP_CHECKSIG])
 
 # recipient address & amount
-address_destination = CBitcoinAddress("mpM8FnLScLCQSBzEbETw1Xeb8Q8QTL9EJL") #replace with your bitcoin address
+address_destination = CBitcoinAddress("n1rNgcdK9YEVomJ84KaJJLWBbfs8x6BiN6") #replace with your bitcoin address
 amount_to_send = 0.00005  # BTC
 
-fee = 0.00002
+fee = 0.0002
 
 change_amount = input_amount - amount_to_send - fee
 if change_amount < 0:
