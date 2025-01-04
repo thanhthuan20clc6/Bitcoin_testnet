@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-"""
-Ví dụ tạo và chi tiêu giao dịch multisig (2-of-2) trên testnet.
-Code được viết với cách tổ chức, biến và cấu trúc hoàn toàn khác so với ví dụ ban đầu.
-"""
-
 # ----------------------------------------------------------
 # 1) IMPORT CÁC THÀNH PHẦN CẦN THIẾT
 # ----------------------------------------------------------
