@@ -118,7 +118,7 @@ tx_fee_btc = 0.00025
 # Tính tiền thừa
 change_btc = utxo_amount_btc - amount_recipient_btc - tx_fee_btc
 if change_btc < 0:
-    print("Số dư không đủ trả cho recipient + fee!")
+    print("Số dư không đủ")
     sys.exit(1)
 
 print(">>> Amount to recipient:", amount_recipient_btc)
